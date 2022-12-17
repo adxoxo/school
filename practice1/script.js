@@ -4,8 +4,10 @@ $(document).ready(function(){
     $('div.band').hide();
     $('div.picture.nothree').show();
 
+    var bvalue = 0
+
     $('#FormControlSelect1').on('change', function(){
-        var bvalue = $(this).val();
+        bvalue = $(this).val();
         $('div.band, img.picture').hide();
         $('div.band.no' + bvalue).show();
         $('img.picture.no' + bvalue).show();
@@ -14,12 +16,23 @@ $(document).ready(function(){
         $('#second-band').prop('selectedIndex',0);
         $('#third-band').prop('selectedIndex',0);
         $('#multiplier').prop('selectedIndex',0);
+        $('#resistorvalue').empty();
+        $('#tolerancevalue').empty();
+        $('#temperaturevalue').empty();
 
     });
 
     function Calculate(first, second, third, multiplier){
-        resistor = (first+second+third)*multiplier
-        return resistor
+
+        if (bvalue <=4){
+            resistor = (first+second)*multiplier
+            return resistor   
+        } 
+        
+        else {
+            resistor = (first+second+third)*multiplier
+            return resistor       
+        }
     };
 
     $('#calculate').click(function(){
@@ -32,13 +45,18 @@ $(document).ready(function(){
 
         var multiplier = $('#multiplier').val();
 
-        testband = Calculate(first, second, third, multiplier);
+        var tolerance = $('#tolerance').val();
 
-        $('#resistorvalue').text(testband);
+        var temperature = $('#temperature').val();
 
-        console.log(testband);
+        calculated = Calculate(first, second, third, multiplier,tolerance,temperature).toExponential();
 
-        $(third).val("#");
+        $('#resistorvalue').text("Resistor: " + calculated + " ohms");
+        $('#tolerancevalue').text("Tolerance: " + tolerance);
+        $('#temperaturevalue').text("Temperature Coefficient: " + temperature);
+
+
+        console.log(calculated);
         
     });
 

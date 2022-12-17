@@ -30,6 +30,9 @@
     <div class="row">
         <div class="col">
             <p id="resistorvalue"></p>
+            <p id="tolerancevalue"></p>
+            <p id="temperaturevalue"></p>
+
             <div class="card w-75 text-center" style="width: 18rem; margin: 0 auto;">
                 <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">
@@ -48,11 +51,17 @@
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Example select</label>
                         <select class="form-control" id="first-band">
-                          <option value=0>Black</option>
-                          <option value=1>Brown</option>
-                          <option value=2>Orange</option>
-                          <option value=3>Red</option>
-                          <option>5</option>
+                          <option> -- </option>
+                          <option value="0">Black (0)</option>
+                          <option value="1">Brown (1)</option>
+                          <option value="2">Red (2)</option>
+                          <option value="3">Orange (3)</option>
+                          <option value="4">Yellow (4)</option>
+                          <option value="5">Green (5)</option>
+                          <option value="6">Blue (6)</option>
+                          <option value="7">Violet (7)</option>
+                          <option value="8">Grey (8)</option>
+                          <option value="9">White (9)</option>
                         </select>
                       </div>
                     </li></div>
@@ -60,11 +69,17 @@
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Example select</label>
                         <select class="form-control" id="second-band">
-                          <option value=0>Black</option>
-                          <option value=1>Brown</option>
-                          <option value=2>Orange</option>
-                          <option value=3>Red</option>
-                          <option>5</option>
+                          <option> -- </option>
+                          <option value="0">Black (0)</option>
+                          <option value="1">Brown (1)</option>
+                          <option value="2">Red (2)</option>
+                          <option value="3">Orange (3)</option>
+                          <option value="4">Yellow (4)</option>
+                          <option value="5">Green (5)</option>
+                          <option value="6">Blue (6)</option>
+                          <option value="7">Violet (7)</option>
+                          <option value="8">Grey (8)</option>
+                          <option value="9">White (9)</option>
                         </select>
                       </div>
                     </li></div>
@@ -72,10 +87,17 @@
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Example select</label>
                         <select class="form-control" id="third-band">
-                          <option value=0>Black</option>
-                          <option value=1>Brown</option>
-                          <option value=2>Orange</option>
-                          <option value=3>Red</option>
+                            <option> -- </option>
+                          <option value="0">Black (0)</option>
+                          <option value="1">Brown (1)</option>
+                          <option value="2">Red (2)</option>
+                          <option value="3">Orange (3)</option>
+                          <option value="4">Yellow (4)</option>
+                          <option value="5">Green (5)</option>
+                          <option value="6">Blue (6)</option>
+                          <option value="7">Violet (7)</option>
+                          <option value="8">Grey (8)</option>
+                          <option value="9">White (9)</option>
                         </select>
                       </div>
                     </li></div>
@@ -83,10 +105,19 @@
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Example select</label>
                         <select class="form-control" id="multiplier">
-                          <option value=1>Black</option>
-                          <option value=10>Brown</option>
-                          <option value=100>Red</option>
-                          <option value=1000>Orange</option>
+                          <option> -- </option>
+                          <option value="1">Black (x1)</option>
+                          <option value="10">Brown (x10)</option>
+                          <option value="100">Red (x100)</option>
+                          <option value="1000">Orange (x1K)</option>
+                          <option value="10000">Yellow (x10K)</option>
+                          <option value="100000">Green (x100K)</option>
+                          <option value="1000000">Blue (x1M)</option>
+                          <option value="10000000">Violet (x10M)</option>
+                          <option value="100000000">Grey (x100M)</option>
+                          <option value="1000000000">White (x1G)</option>
+                          <option value="0.1">Gold (x0.1)</option>
+                          <option value="0.01">Silver (x0.01)</option>
                         </select>
                       </div>
                     </li></div>
@@ -94,11 +125,17 @@
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Example select</label>
                         <select class="form-control" id="tolerance">
-                          <option>Gold</option>
-                          <option>Silver</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
+                          <option value="0"> -- </option>
+                          <option value="±1% (F)">Brown (±1% (F))</option>
+                          <option value="±2% (G)">Red (±2% (G))</option>
+                          <option value="±0.05% (W)">Orange (±0.05% (W))</option>
+                          <option value="±0.02% (P)">Yellow (±0.02% (P))</option>
+                          <option value="±0.5% (D)">Green ±0.5% (D)</option>
+                          <option value="±0.25% (C)">Blue (±0.25% (C))</option>
+                          <option value="±0.1% (B)">Violet (±0.1% (B))</option>
+                          <option value="±0.01% (L)">Grey (±0.01% (L))</option>
+                          <option value="±5% (J)">Gold (±5% (J))</option>
+                          <option value="±10% (K)">Silver (±10% (K))</option>
                         </select>
                       </div>
                     </li></div>
@@ -106,11 +143,16 @@
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Example select</label>
                         <select class="form-control" id="temperature">
-                          <option>Black</option>
-                          <option>Brown</option>
-                          <option>Red</option>
-                          <option>Orange</option>
-                          <option>5</option>
+                          <option value="0"> -- </option>
+                          <option value="250 ppm/K (U)">Black (250 ppm/K (U))</option>
+                          <option value="100 ppm/K (S)">Brown (100 ppm/K (S))</option>
+                          <option value="50 ppm/K (R)">Red (50 ppm/K (R))</option>
+                          <option value="15 ppm/K (P)">Orange (5 ppm/K (P))</option>
+                          <option value="25 ppm/K (Q)">Yellow (25 ppm/K (Q))</option>
+                          <option value="20 ppm/K (Z)">Green (20 ppm/K (Z))</option>
+                          <option value="10 ppm/K (Z)">Blue (10 ppm/K (Z))</option>
+                          <option value="5 ppm/K (M)">Violet (5 ppm/K (M))</option>
+                          <option value="1 ppm/K (K)">Grey (1 ppm/K (K))</option>
                         </select>
                       </div>
                     </li></div>
