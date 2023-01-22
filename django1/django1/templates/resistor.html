@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <div class="container container-fluid"> 
+        <div style="background:transparent !important" class="jumbotron">
+            <h1 class="display-4">Resistor Calculator</h1>
+            <p class="lead">The following are tools to calculate the ohm value and tolerance based on resistor color codes, the total resistance of a group of resistors in parallel or in series, and the resistance of a conductor based on size and conductivity.</p>
+            <hr class="my-2">
+            <p>Use this calculator to find out the ohm value and tolerance based on resistor color codes.</p>
+            <p class="lead">
+            </p>
+        </div>
+    
+        <div class="row">
+            <div class="col">
+                <div class="card w-75 text-center" style="width: 18rem; margin: 0 auto;">
+                    <div class="card-body">
+                      <p id="resistorvalue"></p>
+                      <p id="tolerancevalue"></p>
+                      <p id="temperaturevalue"></p>                  
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Select how many bands</label>
+                            <select class="form-control" id="FormControlSelect1">
+                              <option value="three">Three Band</option>
+                              <option value="four">Four Band</option>
+                              <option value="five">Five Band</option>
+                              <option value="six">Six Band</option>
+                            </select>
+                        </div>
+                    </h6>
+                    <ul class="list-group list-group-flush">
+                        <div><li class="list-group-item">1st Band Color 
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="first-band">
+                              <option> -- </option>
+                              <option value="0">Black (0)</option>
+                              <option value="1">Brown (1)</option>
+                              <option value="2">Red (2)</option>
+                              <option value="3">Orange (3)</option>
+                              <option value="4">Yellow (4)</option>
+                              <option value="5">Green (5)</option>
+                              <option value="6">Blue (6)</option>
+                              <option value="7">Violet (7)</option>
+                              <option value="8">Grey (8)</option>
+                              <option value="9">White (9)</option>
+                            </select>
+                          </div>
+                        </li></div>
+                        <div><li class="list-group-item">2nd Band Color
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="second-band">
+                              <option> -- </option>
+                              <option value="0">Black (0)</option>
+                              <option value="1">Brown (1)</option>
+                              <option value="2">Red (2)</option>
+                              <option value="3">Orange (3)</option>
+                              <option value="4">Yellow (4)</option>
+                              <option value="5">Green (5)</option>
+                              <option value="6">Blue (6)</option>
+                              <option value="7">Violet (7)</option>
+                              <option value="8">Grey (8)</option>
+                              <option value="9">White (9)</option>
+                            </select>
+                          </div>
+                        </li></div>
+                        <div class="band nofive nosix"><li class="list-group-item">3rd Band Color
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="third-band">
+                                <option> -- </option>
+                              <option value="0">Black (0)</option>
+                              <option value="1">Brown (1)</option>
+                              <option value="2">Red (2)</opt"thiption>
+                              <option value="6">Blue (6)</option>
+                              <option value="7">Violet (7)</option>
+                              <option value="8">Grey (8)</option>
+                              <option value="9">White (9)</option>
+                            </select>
+                          </div>
+                        </li></div>
+                        <div><li class="list-group-item">Multiplier 
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="multiplier">
+                              <option> -- </option>
+                              <option value="1">Black (x1)</option>
+                              <option value="10">Brown (x10)</option>
+                              <option value="100">Red (x100)</option>
+                              <option value="1000">Orange (x1K)</option>
+                              <option value="10000">Yellow (x10K)</option>
+                              <option value="100000">Green (x100K)</option>
+                              <option value="1000000">Blue (x1M)</option>
+                              <option value="10000000">Violet (x10M)</option>
+                              <option value="100000000">Grey (x100M)</option>
+                              <option value="1000000000">White (x1G)</option>
+                              <option value="0.1">Gold (x0.1)</option>
+                              <option value="0.01">Silver (x0.01)</option>
+                            </select>
+                          </div>
+                        </li></div>
+                        <div class="band nofour nofive nosix"><li class="list-group-item">Tolerance Color
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="tolerance">
+                              <option value="0"> -- </option>
+                              <option value="±1% (F)">Brown (±1% (F))</option>
+                              <option value="±2% (G)">Red (±2% (G))</option>
+                              <option value="±0.05% (W)">Orange (±0.05% (W))</option>
+                              <option value="±0.02% (P)">Yellow (±0.02% (P))</option>
+                              <option value="±0.5% (D)">Green ±0.5% (D)</option>
+                              <option value="±0.25% (C)">Blue (±0.25% (C))</option>
+                              <option value="±0.1% (B)">Violet (±0.1% (B))</option>
+                              <option value="±0.01% (L)">Grey (±0.01% (L))</option>
+                              <option value="±5% (J)">Gold (±5% (J))</option>
+                              <option value="±10% (K)">Silver (±10% (K))</option>
+                            </select>
+                          </div>
+                        </li></div>
+                        <div class="band nosix"><li class="list-group-item">Temperature Coefficient Color
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="temperature">
+                              <option value="0"> -- </option>
+                              <option value="250 ppm/K (U)">Black (250 ppm/K (U))</option>
+                              <option value="100 ppm/K (S)">Brown (100 ppm/K (S))</option>
+                              <option value="50 ppm/K (R)">Red (50 ppm/K (R))</option>
+                              <option value="15 ppm/K (P)">Orange (5 ppm/K (P))</option>
+                              <option value="25 ppm/K (Q)">Yellow (25 ppm/K (Q))</option>
+                              <option value="20 ppm/K (Z)">Green (20 ppm/K (Z))</option>
+                              <option value="10 ppm/K (Z)">Blue (10 ppm/K (Z))</option>
+                              <option value="5 ppm/K (M)">Violet (5 ppm/K (M))</option>
+                              <option value="1 ppm/K (K)">Grey (1 ppm/K (K))</option>
+                            </select>
+                          </div>
+                        </li></div>
+                        <button type="button" class="btn btn-primary" id="calculate" style="margin: 0auto;">Calculate</button>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img id="pic" class="picture nothree" src="https://www.calculator.net/img/resistor/3-band.png" class="text-center" alt="...">
+                    <img class="picture nofour" src="https://www.calculator.net/img/resistor/4-band.png" class="text-center" alt="...">
+                    <img class="picture nofive" src="https://www.calculator.net/img/resistor/5-band.png" class="text-center" alt="...">
+                    <img class="picture nosix" src="https://www.calculator.net/img/resistor/6-band.png" class="text-center" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock content %}
